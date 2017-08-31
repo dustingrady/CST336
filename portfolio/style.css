@@ -1,3 +1,51 @@
 body {
     background-color: lightblue;
 }
+
+/*
+#aboutMe {
+  float: right;
+  padding: 10px;
+}
+*/
+/*
+#profilePic {
+    float: left;
+    padding-right: 10px;
+}
+*/
+
+#contactBar {
+  font-family: 'Aclonica';font-size: 22px;
+  text-align: center;
+}
+
+#name {
+  font-family: 'Varela Round', sans-serif;
+  text-align: center;  
+}
+
+#content {
+    text-align: center;
+    margin: 0 auto;
+    /*padding-bottom: 250px; */
+}
+
+#footer {
+    text-align: center;
+}
+
+/*
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;
+}
+
+
+aside, section {
+    float: left;
+}
+
+*/
