@@ -1,35 +1,68 @@
 <!DOCTYPE html>
 <html>
-    <body><!-- Begin body -->
-    <head><!-- Begin head -->
-        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="style.css">
+<!--
+
+First Website
+and comment
+in html
+(comments can span multiple lines)
+
+-->
+
+<!-- This is the head -->
+<!-- All styles and javascript go inside the head -->
+    <head>
+        <meta charset="utf-8" />
         <title>Dustin Grady: Personal Website</title>
-    </head><!-- End head -->
-    
-        <header id="name">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet"> 
+    </head>
+<!-- closing head -->
+
+    <!-- This is the body -->
+    <!-- This is where we place the content of our website -->
+    <body>
+        <header>
             <h1>Dustin Grady</h1>
         </header>
-    
-    <nav id = "contactBar">
-        <hr>
-        <a href="index.html"><b>Home</b></a>
-        <a href="about.html"><b>About</b></a>
-        <a href="contact.html"><b>Contact</b></a>
-        <br>
-    </nav>
-    
-    <img src="img/Anon.png" id="profilePic">
-    <div id="content">
-        <p>This is my home section. It's nice, wouldn't you agree? <br>
-        I think this is probably enough characters.</p>
-    </div>
-    
-    <footer id="footer">
-        <hr>
-        CST336 Internet Programming. 2017 Grady<br>
-        Disclaimer: The information in this webpage is fictitous.<br>
-        It is used for academic purposes only. 
-    </footer>
-    </body><!-- End body -->
+        <nav>
+            <hr width="50%" />
+            <a href="index.html"><b>Home</b></a>
+            <a href="about.html"><b>About</b></a>
+            <a href="contact.html"><b>Contact</b></a>
+        </nav>
+        
+        <br /><br />
+        <main>
+            <figure id ="me">
+                <img src="img/Anon.png" alt="Profile Photo" />
+            </figure>
+            
+            <div id="welcomeText">
+                Hello! <br />
+                <p>Thank you for visiting my portfolio website.</p>
+                <p>I am a person with skills. Blah blah blah.</p>
+                <p>Do not contact me.</p>
+                
+                <br /><br />
+                <em>"Some inspirational quote could go here <strong>possibly</strong>. Or not, either way."</em><br />
+                -Me
+                
+            </div>
+        </main>
+        
+        <!-- This is the footer -->
+        <!-- The footer goes inside the body but not always -->
+        <footer>
+            <hr>
+            CST336 Internet Programming. 2017 Grady<br />
+            Disclaimer: The information in this webpage is fictitous.<br />
+            It is used for academic purposes only. <br />
+            <img src="img/csumb.png">
+        </footer>
+        <!-- closing footer -->
+        
+    </body>
+    <!-- closing body -->
+
 </html>

@@ -1,12 +1,72 @@
 body {
-    background-color: black;
-    color:white;
+    background-color: #84A9B5;
+    color:black;
 }
 
 header, main, nav, footer {
     text-align: center;
 }
 
+nav a {
+    padding:15px;
+    padding-bottom:4px;
+    font-size: 1.8em;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    border-bottom:2px orange solid;
+    font-size: 2em;
+    transition: .9s;
+}
+
+#me, #welcomeText {
+    float:left;
+}
+
+#table-header {
+    background-color: #351a00;
+}
+
+.table-row {
+    background-color: #753900;
+}
+
+.hobby {
+    color: yellow;
+}
+
+table {
+    margin: 0px auto;
+}
+
+h1 {
+    font-family: 'Baloo Bhaijaan', cursive;
+    font-size: 4em;
+    margin-bottom: 0px;
+}
+
+ul {
+    text-align: left;
+    padding-left: 200px;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: orange;
+}
+
+footer {
+    color:white;
+    clear: left;
+}
+
+/*
 #profilePic {
     float: left;
     padding-right: 10px;
@@ -20,13 +80,6 @@ header, main, nav, footer {
     text-align: center;
 }
 
-#content {
-    /*float: right;*/
-    margin: 0 auto;
-    /*padding-bottom: 250px; */
-}
+*/
 
-#footer {
-  clear:both;
-}
 
