@@ -26,7 +26,7 @@ nav a:hover {
 }
 
 #table-header {
-    background-color: #351a00;
+    background-color: #070707;
 }
 
 .table-row {
@@ -34,7 +34,7 @@ nav a:hover {
 }
 
 .hobby {
-    color: yellow;
+    color: f4f416;
 }
 
 table {
@@ -65,21 +65,5 @@ footer {
     color:white;
     clear: left;
 }
-
-/*
-#profilePic {
-    float: left;
-    padding-right: 10px;
-}
-
-#name {
-  font-family: 'Lobster', cursive;
-}
-
-#contactBar {
-    text-align: center;
-}
-
-*/
 
 
