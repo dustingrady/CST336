@@ -5,6 +5,7 @@ body {
 
 header, main, nav, footer {
     text-align: center;
+    
 }
 
 nav a {
@@ -19,6 +20,11 @@ nav a:hover {
     border-bottom:2px orange solid;
     font-size: 2em;
     transition: .9s;
+}
+
+img {
+    display: block;
+    margin: auto;
 }
 
 #me, #welcomeText {
