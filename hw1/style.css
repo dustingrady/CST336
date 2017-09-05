@@ -1,0 +1,74 @@
+body {
+    background-color: grey;
+    color:black;
+}
+
+header, main, nav, footer {
+    text-align: center;
+}
+
+nav a {
+    padding:15px;
+    padding-bottom:4px;
+    font-size: 1.8em;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    border-bottom:2px orange solid;
+    font-size: 2em;
+    transition: .9s;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+#table-header {
+    background-color: #070707;
+}
+
+.table-row {
+    background-color: #3afc0a;
+}
+
+.hobby {
+    color: #f4f416;
+}
+
+table {
+    margin: 0px auto;
+}
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 4em;
+    margin-bottom: 0px;
+}
+
+nav {
+    font-family: 'Quicksand', sans-serif;
+}
+
+ul {
+    text-align: left;
+    padding-left: 200px;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: #f4f416;
+}
+
+footer {
+    color:white;
+    clear: left;
+}
+
+
