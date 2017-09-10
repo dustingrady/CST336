@@ -20,7 +20,7 @@
         margin:0 auto;
     }
     
-    #reel1, #reel2, #reel3 {
+    #reel1, #reel2, #reel3, #reel4 {
         top:248px;
         position:absolute;
     }
@@ -33,6 +33,9 @@
     }
     #reel3{
         left:357px;
+    }
+    #reel4{
+        left:462px;
     }
     
     input{
