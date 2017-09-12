@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+    include './functions.php';
+?>
+
 <html>
     <style>
         @import url("css/styles.css");
@@ -7,12 +11,9 @@
         <title> 777 Slot Machine </title>
     </head>
 
-    <div id="main"></div>
+    <div id="main">
         <?php
-        include './functions.php';
-        
-        play();
-        
+            play();
         ?>
         
         <form>

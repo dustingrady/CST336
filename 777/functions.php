@@ -1,11 +1,11 @@
 <?php
 
     function play(){
-        for($i=1; $i<4; $i++){
+        for($i=0; $i<3; $i++){
             ${"randomValue" . $i } = rand(0,3);
             displaySymbol(${"randomValue" . $i}, $i );
         }
-        displayPoints($randomValue1, $randomValue2, $randomValue3);
+        displayPoints($randomValue0, $randomValue1, $randomValue2);
     }
     
     function displaySymbol($randomValue, $pos){
@@ -19,12 +19,12 @@
             case 3: $symbol = "lemon";
                 break;
             }
-            echo "<img id='reel$pos' src='img/$symbol.png' alt='$symbol' title='".ucfirst($symbol) . "' width='70' >";
+            echo "<img id='reel$pos' src='img/$symbol.png' alt='$symbol' title='".ucfirst($symbol) . "' width='70' />";
         }
         
-    function displayPoints($randomValue1, $randomValue2, $randomValue3){
+    function displayPoints($randomValue0, $randomValue1, $randomValue2){
         echo "<div id='output'>";
-        if($randomValue1 == $randomValue2 && $randomValue2 == $randomValue3){
+        if($randomValue0 == $randomValue1 && $randomValue1 == $randomValue2){
             switch($randomValue1){
                 case 0: $totalPoints = 1000;
                     echo "<h1>Jackpot!</h1>";

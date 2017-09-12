@@ -8,6 +8,7 @@
         background-color: black;
         background-image:url("../img/bg7.jpg");
         color: white;
+        
     }
     
     #main {
@@ -15,26 +16,23 @@
         background-image:url("../img/machine.png");
         width:600px;
         height:500px;
-        position:absolute;
+        position:relative;
         margin:0 auto;
     }
     
-    #reel1, #reel2, #reel3, #reel4 {
+    #reel0, #reel1, #reel2 {
         top:248px;
         position:absolute;
     }
     
-    #reel1{
+    #reel0{
         left:145px;
     }
-    #reel2{
+    #reel1{
         left:252px;
     }
-    #reel3{
+    #reel2{
         left:357px;
-    }
-    #reel4{
-        left:462px;
     }
     
     input{
