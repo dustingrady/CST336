@@ -8,7 +8,6 @@
         background-color: black;
         background-image:url("../img/bg7.jpg");
         color: white;
-        
     }
     
     #main {
@@ -16,7 +15,7 @@
         background-image:url("../img/machine.png");
         width:600px;
         height:500px;
-        position:relative;
+        position:absolute;
         margin:0 auto;
     }
     
