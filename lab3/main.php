@@ -68,19 +68,18 @@
     
     function getHand() {
         global $deck, $names, $players;
-        $score = 0;
         
         for($i = 0; $i < count($players); $i++){
             echo  "<h2>" . $names[$players[$i]] . "<h2/>", "<img src='img/pokemon/" . $names[$players[$i]] . ".png'>";
-            //echo "<h1>" . count($players) ."</h1>"; //Testing
-        //}
-            do{
+            
+            $score = 0;
+            
+            do {
                 $crd = ($deck[(count($deck) - 1)] % 13) + 1;
                 $cardSuit =  floor($crd / 13);
                 $suitStr = "";
             
-                switch($cardSuit)
-                {
+                switch($cardSuit) {
                     case 0:
                         $suitStr = "clubs";
                         break;
@@ -94,28 +93,28 @@
                         $suitStr = "spades";
                         break;
                 }
-                echo "<img src = 'cards/$suitStr/$crd.png' /> ";
+                
+                echo "<img src = 'img/$suitStr/$crd.png' /> ";
             
-                if ($crd >= 1 && $crd <= 13){
+                if ($crd >= 1 && $crd <= 13) {
                     $score = $score + $crd;
-                }
-                elseif ($crd >=14 && $crd <= 26){
+                } elseif ($crd >=14 && $crd <= 26){
                     $score = $score + $crd - 13;
-                }
-                elseif ($crd >= 27 && $crd <=39){
+                } elseif ($crd >= 27 && $crd <=39){
                     $score = ($score + $crd - 26);
-                }
-                else {
+                } else {
                     $score = ($score + $crd - 39);
                 }
             
                 array_pop($deck);
             
             } while ($score < 39);
+            
             echo $score . " ";
         }
             return $score;
     }
+    
     function displayWinner()
     {
     }
@@ -139,17 +138,7 @@
     <?php
         
         getPlayers(4);
-        gethand();
-        /*
-        $x = getHand();
-        echo "$x<br>";
-        $x = getHand();
-        echo "$x<br>";
-        $x = getHand();
-        echo "$x<br>";
-        $x = getHand();
-        echo "$x<br>";
-        */
+        getHand();
         displayWinner();
     ?>  
     <hr/>
