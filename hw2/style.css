@@ -46,9 +46,6 @@ img {
     background-color: #3afc0a;
 }
 
-.hobby {
-    color: #f4f416;
-}
 
 table {
     margin: 0px auto;
@@ -58,10 +55,6 @@ h1 {
     font-family: 'Quicksand', sans-serif;
     font-size: 4em;
     margin-bottom: 0px;
-}
-
-nav {
-    font-family: 'Quicksand', sans-serif;
 }
 
 ul {

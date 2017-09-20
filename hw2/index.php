@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php
     include './functions.php';
+    $descriptionArray = array_fill(0,100," ");
+    $descriptionArray=array("<h4>Note:", "A", "prime", "number", "is", "a", "natural", "number", "greater", "than", "1", "that", "has", "no", "positive", "divisors", "other", "than", "1", "and", "itself. </h4>");
 ?>
 
 <html>
@@ -34,14 +36,22 @@
             <div id="main">
                 <?php
                     generateNumber(); //Call our generateNumber function to kick things off
+                    echo "<br>";
+                    //Print our description using a string array
+                    //Uses "sizeof", "array_fill" and "array" functions
+                    
+                    for($i=0; $i<sizeof($descriptionArray); $i++){
+                        array ($descriptionArray[$i], $descriptionArray[$i] .= " ");//Append spaces to values
+                        echo $descriptionArray[$i];
+                    }
                 ?>
                 
-                <p><b>Note: </b>A prime number (or a prime) is a natural number greater than 1</p>
-                <p>that has no positive divisors other than 1 and itself.</p>
+                <!--<p><b>Note: </b>A prime number (or a prime) is a natural number greater than 1</p>
+                <p>that has no positive divisors other than 1 and itself.</p> -->
                 
                 <br /><br />
-                <blockquote><i>"I think computer viruses should count as life.  I think it says something about human nature that the only form of life we have created so far is purely destructive.  We’ve created life in our own image."</i></blockquote>
-                – Stephen Hawking<br />
+                <blockquote><i>"God may not play dice with the universe, but something strange is going on with the prime numbers."</i></blockquote>
+                – Paul Erdos<br />
             </div>
         </main>
         

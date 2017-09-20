@@ -7,21 +7,19 @@
             echo 'This is not a Prime Number.....'."\n";
         }
         else{
-            echo "<h3>'This is a Prime Number!'</h3>"."\n";
+            echo "<h3><font color=blue>'This is a Prime Number!'</font></h3>"."\n";
         }
     }
     
     function IsPrime($number)
     {
-        while(1){
-            for($i=2; $i<$number; $i++)
-            {
-                if($number %$i ==0)
-	            {
-		            return 0;
-		        }
-            }
-        return 1;
+        for($i=2; $i<$number; $i++)
+        {
+            if($number %$i ==0)
+	        {
+		        return 0;
+		    }
         }
+        return 1;
     }
 ?>
