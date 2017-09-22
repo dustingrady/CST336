@@ -40,7 +40,7 @@
         "Ninetales");
         
     $players = array();
-    $scores = array();
+    $score = array();
     $cards = array();
         
     function getPlayers($numberOfPlayers){
@@ -67,16 +67,16 @@
     $deck = generateDeck();
     
     function getHand() {
-        global $deck, $names, $players;
-        
-        for($i = 0; $i < count($players); $i++){
+        global $deck, $names, $players, $score;
+        $player_cards = array();
+        for ($i = 0; $i < count($players); $i++) {
             echo  "<h2>" . $names[$players[$i]] . "<h2/>", "<img src='img/pokemon/" . $names[$players[$i]] . ".png'>";
             
-            $score = 0;
+            $score[$i] = 0;
             
             do {
                 $crd = ($deck[(count($deck) - 1)] % 13) + 1;
-                $cardSuit =  floor($crd / 13);
+                $cardSuit = rand(0, 3);
                 $suitStr = "";
             
                 switch($cardSuit) {
@@ -94,41 +94,80 @@
                         break;
                 }
                 
+                $temp = $crd.$suitStr;
+                
+                while (in_array($temp, $player_cards)) {
+                    shuffle($deck);
+                    $crd = ($deck[(count($deck) - 1)] % 13) + 1;
+                    
+                    $temp = $crd.$suitStr;
+                }
+                
+                array_push($player_cards, $temp);
+                
                 echo "<img src = 'img/$suitStr/$crd.png' /> ";
             
                 if ($crd >= 1 && $crd <= 13) {
-                    $score = $score + $crd;
+                    $score[$i] = $score[$i] + $crd;
                 } elseif ($crd >=14 && $crd <= 26){
-                    $score = $score + $crd - 13;
+                    $score[$i] = $score[$i] + $crd - 13;
                 } elseif ($crd >= 27 && $crd <=39){
-                    $score = ($score + $crd - 26);
+                    $score[$i] = ($score[$i] + $crd - 26);
                 } else {
-                    $score = ($score + $crd - 39);
+                    $score[$i] = ($score[$i] + $crd - 39);
                 }
             
                 array_pop($deck);
             
-            } while ($score < 39);
+            } while ($score[$i] < 39);
             
-            echo $score . " ";
+            echo $score[$i] . " ";
         }
             return $score;
     }
     
-    function displayWinner()
+ function displayWinner()
     {
-    }
+        global $names,$players,$score, $winnings,$topscore;
+        $max=0;
+        $winners=0;
+        for($i = 0; $i < count($players); $i++)
+        {
+            if($score[$i]>$max)
+            {
+               $max=$score[$i];
+            }
+        }
+        for($s=0;$s< count($players); $s++){
+                if($score[$s]<=42){
+                if($score[$s]>$topscore){
+                    $topscore=$score[$s];
+                }
+            }
+        }
+       
+        for($i=0; $i<count($players); $i++){
+            
+            if($score[$i]==$topscore){
+                echo "<h1>" . $names[$players[$i]]." Wins ".$winnings=+$score[0]+$score[1]+$score[2]+$score[3]." points!" . "<hr/>";
+                echo "<br/>";
+                $winners++;
+                }
+           }
+           if($winners==0){
+                echo "<h1> Nobody wins! <hr/>";
+            }
+        }
 ?>
-
 <!DOCTYPE html>
 
 <html>
 <head>
      <style>
-    @import url(styles/style.css);
+    @import url(styles.css);
       
       </style>
-       <h1 style="blue; background:gray "> Silver Jack </h1>
+       <h1 style="blue; background:#586BA4 "> Silver Jack </h1>
      <meta charset="utf-8">
      <title>Lab 3: Silverjack</title>
 </head>
