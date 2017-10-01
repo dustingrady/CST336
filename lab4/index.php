@@ -68,7 +68,7 @@ function checkIfSelected($option){
          <br /><br />
          <?php
             if(!isset($_GET['keyword'])) { // form has not been submitted
-                echo "<h2> Enter a keyword to begin./h2>";
+                echo "<h2> Enter a keyword to begin.</h2>";
             }else { // form has been submitted
                  
             if(empty($_GET['keyword']) && empty($_GET['category']) ) {
