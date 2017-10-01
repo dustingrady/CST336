@@ -2,14 +2,10 @@
 $backgroundImage = "img/sea.jpg";
 // API call goes here
 if (isset($_GET['keyword'])) { 
-
     include 'api/pixabayAPI.php';
-    
     $keyword = $_GET['keyword'];
-    
     if(!empty($_GET['category'])) { 
     $keyword = $_GET['category'];
-    
     }
     if(isset($_GET['layout'])) {
         $imageURLs = getImageURLs($keyword, $_GET['layout']);
@@ -20,9 +16,7 @@ if (isset($_GET['keyword'])) {
 } 
 function checkIfSelected($option){
     if ($option == $_GET['category']) {
-            
             return "selected";
-            
         }
 }
 ?>
@@ -37,7 +31,6 @@ function checkIfSelected($option){
            @import url("css/styles.css");
            
            body {
-               
                background-image: url(<?=$backgroundImage?>);
                background-size: 100% 100%;
                background-attachment:fixed;
@@ -49,14 +42,11 @@ function checkIfSelected($option){
         <br /><br />
         <!-- html form goes here -->
         <form>
-              <input type="text" name="keyword" placeholder="keyword" value="<?=$_GET['keyword']?>"/>
-        
+            <input type="text" name="keyword" placeholder="keyword" value="<?=$_GET['keyword']?>"/>
             <div id="rgroup">
             <input type="radio" id="lhorizontal" name="layout" value="horizontal" <?= ($_GET['layout']=='horizontal') ? "checked" : "" ?> >
-            
             <label for="lhorizontal"> Horizontal</label>
             <br/>
-
             <input type="radio"id="lvertical" name="layout" value="vertical" <?= ($_GET['layout']=='vertical') ? "checked" : "" ?> >
             <label for="lvertical"> Vertical</label>
             </div>
@@ -75,7 +65,6 @@ function checkIfSelected($option){
             
         </form>
      
-
          <br /><br />
          <?php
             if(!isset($_GET['keyword'])) { // form has not been submitted
@@ -88,7 +77,6 @@ function checkIfSelected($option){
             return;
             exit;
         }
-        
         ?>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators here -->
@@ -116,7 +104,6 @@ function checkIfSelected($option){
                     echo '</div>';
                     unset($imageURLs[$randomIndex]);
                 }
-        
             ?>
         </div>
         <!-- controls here -->
