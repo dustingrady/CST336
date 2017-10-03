@@ -44,11 +44,11 @@ function checkIfSelected($option){
         <form>
             <input type="text" name="keyword" placeholder="keyword" value="<?=$_GET['keyword']?>"/>
             <div id="rgroup">
-            <input type="radio" id="lhorizontal" name="layout" value="horizontal" <?= ($_GET['layout']=='horizontal') ? "checked" : "" ?> >
-            <label for="lhorizontal"> Horizontal</label>
-            <br/>
             <input type="radio"id="lvertical" name="layout" value="vertical" <?= ($_GET['layout']=='vertical') ? "checked" : "" ?> >
             <label for="lvertical"> Vertical</label>
+            <br/>
+            <input type="radio" id="lhorizontal" name="layout" value="horizontal" <?= ($_GET['layout']=='horizontal') ? "checked" : "" ?> >
+            <label for="lhorizontal"> Horizontal</label>
             </div>
             <br/>
             
