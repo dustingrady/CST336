@@ -29,7 +29,7 @@
                             </div>
                             
                             <div id="CoffeeType">
-                                <p>Preferred Coffee Type:
+                                <p>Random question of the day (preferred coffee type):
                                 <select name="Type" required/>
                                     <option selected disabled hidden value = ''></option>
                                     <option value="Light Roast">Light Roast</option>
