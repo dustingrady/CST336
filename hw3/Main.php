@@ -19,7 +19,7 @@
                         <div class="formEntry">
                             <div id="nameField">
                                 <p>Enter Name:
-                                <input type="text" name="name" required/></p>
+                                <input type="text" name="name" required/></p> 
                             </div>
                             
                             <div id="ageField">

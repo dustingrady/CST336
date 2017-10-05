@@ -11,7 +11,7 @@
         <div class="container">
             <div class="content">
                 <p>Thank you, <strong><?= $_POST["name"] ?></strong>!</p>
-                <p>Your order has been placed. <strong><?= $_POST["Anime"] ?></strong></p>
+                <p>Your order has been placed.</p>
                 <br />                
                 <p><b>You ordered:</b></p>
             
