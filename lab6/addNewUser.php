@@ -34,7 +34,7 @@
     $nameOfarray[':email'] = $_GET['email'];    
     $nameOfarray[':phone'] = $_GET['phone'];
     $nameOfarray[':role'] = $_GET['role'];    
-    $nameOfarray[':deptId'] = $_GET['deptId'];
+    $nameOfarray[':deptId'] = $_GET['id'];
     
     // $nameOfarray = array() ;
     // $nameOfarray[':id']= $_GET['id'];

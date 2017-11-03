@@ -81,7 +81,7 @@ if(isset($_GET['id'])) {
                            <?php
                               $departments = getDepartments();
                               foreach ($departments as $department) {
-                                  echo "<option ".selectDepartment($department['departmentId'])." value ='" . $department['departmentId']. "'>" . $department['deptName']    ." </option>";
+                                  echo "<option ".selectDepartment($department['id'])." value ='" . $department['id']. "'>" . $department['name']    ." </option>";
                               }
                             ?>
                          </select>
