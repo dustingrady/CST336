@@ -3,7 +3,7 @@
 function getDepartments()
     {
         global $conn;
-        $sql = "SELECT id, name FROM department ORDER BY name";
+        $sql = "SELECT id, name FROM departments ORDER BY name";
         $stmt = $conn -> prepare ($sql);
         $stmt -> execute();
         $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
