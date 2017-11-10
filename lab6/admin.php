@@ -85,9 +85,9 @@ function getAllUsers() {
             $users = getAllUsers();
             foreach ($users as $user) {
                 
-                echo "<a href='userInfo.php?id=".$user['id']."' target='userInfoFrame'>" . $user['firstName'] . "</a> ";
-                echo "<a href='' onclick='window.open(\"userInfo.php?id=".$user['id']." \", \"userWindow\", \"width=200, height=200\" )'>" . $user['lastName'] . " </a> ";
-                echo $user['email'];
+                // echo "<a href='userInfo.php?id=".$user['id']."' target='userInfoFrame'>" . $user['firstName'] . "</a> ";
+                // echo "<a href='' onclick='window.open(\"userInfo.php?id=".$user['id']." \", \"userWindow\", \"width=200, height=200\" )'>" . $user['lastName'] . " </a> ";
+                // echo $user['email'];
 
                echo "<a href='userUpdate.php?id=".$user['id']."'>
                      <button type=\"button\" class=\"btn btn-default btn-sm\">
