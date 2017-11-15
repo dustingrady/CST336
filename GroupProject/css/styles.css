@@ -1,0 +1,44 @@
+form {
+  text-align: center;
+}
+
+h1 { 
+    width: 100%;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+h2{
+text-align: center;
+color:black;
+text-shadow: 2px 2px 4px #000000;
+font-family: "Lucida Console",Lucida,monospace;;
+font-size: 60px;
+font-style: oblique;
+background-color:lightblue;
+}
+
+h3{
+    text-align: center;
+color:black;
+text-shadow: 2px 2px 4px #000000;
+font-family: "Lucida Console",Lucida,monospace;;
+font-size: 30px;
+background-color:black;
+    
+}
+
+
+body {
+    font-family: "Lucida Console", Lucida, Monospace;
+    background: white;
+	color:Black;
+	font:normal 10 px;
+	text-align:center; 
+	}
+
+
+table, th, td {
+   border: 1px solid black;
+   margin:auto;
+   
+}
