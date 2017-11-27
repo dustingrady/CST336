@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+    
+<!-- This is the head -->
+<!-- All styles and javascript go inside the head -->
+    <head>
+        <meta charset="utf-8" />
+        <title>Prime Number Checker</title>
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+<!-- closing head -->
+
+    <!-- This is the body -->
+    <!-- This is where we place the content of our website -->
+    <body>
+        <header>
+            <h1>Prime Number Checker</h1>
+        </header>
+        <nav>
+            <!-- Navigation stuff here -->
+        </nav>
+        <br /><br />
+        
+        <!--Start Javascript stuffs-->
+        <script>
+        function generateNumber(){
+            var randomValue = Math.floor((Math.random() * 1000) +1);
+            document.write(randomValue); //Output our random value
+            var a = IsPrime(randomValue);
+            //Output result
+            if (a==0){
+                document.write("<br>This is not a prime number....."); 
+            }
+            else{
+                document.write("<h3><font color=blue>'This is a Prime Number!'</font></h3>"); 
+            }
+        }
+    
+        function IsPrime(number){
+            for(var i=2; i<number; i++){
+                if(number %i ==0){
+	                return 0;
+	            }
+            }
+            return 1;
+        }
+        </script>
+        <!--End Javascript stuffs-->
+        
+        <main>
+            <img src="img/OptimusPrime.png" alt="OptimusPrime">
+            <div id="content">
+                <script>
+                    generateNumber();   
+                </script>
+            <div id="main">
+                <br /><br />
+                <blockquote><i>"God may not play dice with the universe, but something strange is going on with the prime numbers."</i></blockquote>
+                – Paul Erdos<br />
+            </div>
+        </main>
+        
+        <!-- This is the footer -->
+        <!-- The footer goes inside the body but not always -->
+        <footer>
+            <hr>
+            CST336 Internet Programming. 2017 Grady<br />
+            Disclaimer: The information in this webpage is fictitous.<br />
+            It is used for academic purposes only. <br />
+            <img src="img/csumb.png" alt="CSUMB">
+        </footer>
+        <!-- closing footer -->
+        
+    </body>
+    <!-- closing body -->
+</html>
+    

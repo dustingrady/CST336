@@ -49,7 +49,7 @@ $servername = "localhost";
     
     echo "Product info <br/>";
     
-function getUserInfo() {
+function getPartInfo() {
     
     global $conn;
       
@@ -71,9 +71,9 @@ function getUserInfo() {
     return $record;
 }
 
-$data = getUserInfo();
+$data = getPartInfo();
 
-$product = getUserInfo();
+$product = getPartInfo();
     
             //
               echo "<table  ' border='1'>";
@@ -91,7 +91,7 @@ $product = getUserInfo();
                  echo "<tr>";
                  
                  echo "<td> ID: ".$data['productID']."</td>" ."<td> Maker: ".$data['model']."</td>" . "<td> Name: " .$data['modelName'] ."</td>". "<td> Type: ". $data['modelType'] ."</td>". "<td> Price: " . $data['price'] ."<td> Year: ".$data['year']."</td>" ." </td>";
-                 
+    
                  //echo "<td>[<a href='moreinfo.php?productID=".$data['productID']."'> More Info </a>]</td>";
                   //echo "[<a onclick='return confirmDelete()' href='deleteUser.php?userId=".$user['id']."'> Delete </a>] <br />";
                  echo "</tr>";

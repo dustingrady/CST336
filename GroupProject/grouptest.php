@@ -227,10 +227,10 @@ $product = dataList2();
                 
                  echo "<tr>";
                  
-                 echo "<td> Maker: ".$data['model']."</td>" . "<td> Name: " .$data['modelName'] ."</td>". "<td> Type: ". $data['modelType'] ."</td>". "<td> Price: " . $data['price'] ." </td>";
+                 echo "<td>".$data['model']."</td>" . "<td>" .$data['modelName'] ."</td>". "<td>". $data['modelType'] ."</td>". "<td>" . $data['price'] ." </td>";
                  
-                 //echo "<td>[<a href='moreinfo.php?productID=".$data['productID']."'> More Info </a>]</td>";
-                  //echo "[<a onclick='return confirmDelete()' href='deleteUser.php?userId=".$user['id']."'> Delete </a>] <br />";
+                 echo "<td>[<a href='moreinfo.php?Name=".$data['productID']."'> More Info </a>]</td>";
+                 //echo "[<a onclick='return confirmDelete()' href='deleteUser.php?userId=".$user['id']."'> Delete </a>] <br />";
                  echo "</tr>";
                  
                 }
