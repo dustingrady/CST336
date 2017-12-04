@@ -41,7 +41,7 @@ function displayAllProducts() {
 </head>
 
 <body>
-    <h2><a href='adminlogin.php'>Administrator Login</a></h2>
+    <h4><a href='adminlogin.php'>Administrator Login</a></h4>
     <div><center>
         <h1>Pokemon Game Database</h1>
     <div>
@@ -82,6 +82,7 @@ function displayAllProducts() {
      <div id="all"><?=displayAllProducts()?></div></center>
      
     <script>
+    /*global $*/
          $("#displayAll").click(function() {
             $.ajax({
                 "method": "GET",

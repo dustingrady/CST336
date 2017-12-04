@@ -3,6 +3,7 @@
 include 'Connect.php';
 $conn = dbConn();
 $sql = "SELECT * FROM `games` a left join `recommendation` b ON a.gameID = b.gameID WHERE a.gameID = :gameID ";
+
 $namedParameters = array();
 $namedParameters[':gameID'] = $_GET['gameID'];
 $statement = $conn->prepare($sql);    
@@ -24,7 +25,6 @@ if (isset($_GET['addRecommendation'])) {
   $statement->execute($namedParameters);  
   echo "Record has been added!";
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -46,25 +46,6 @@ if (isset($_GET['addRecommendation'])) {
       <input type="hidden" name="gameID" value="<?=$_GET['gameID']?>" />
       <input type="submit" value="Add a recommendation" name="addRecommendation" />
     </form>
-    
-    <?php 
-      if (isset($_GET['addRecommendation'])) {
-      
-        $sql = "INSERT INTO recommendation ( gameID, time, date, comment) 
-                VALUES ( :gameID, :time, :date, :comment)";
-              
-        $namedParameters = array();
-        $namedParameters[':gameID'] = $_GET['gameID'];
-        $namedParameters[':time'] = $_GET['time'];
-        $namedParameters[':date'] = $_GET['date'];
-        $namedParameters[':comment'] = $_GET['comment'];
-    
-        $statement = $conn->prepare($sql);
-        $statement->execute($namedParameters);  
-        echo "Record has been added!";
-     }
-     
-    ?>
 
     <?php
     $none = false;

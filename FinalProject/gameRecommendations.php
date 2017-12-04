@@ -1,11 +1,12 @@
 <?php
-echo "<a href='index.php'><h2>Home</h2></a>";
+echo "<a href='index.php'><h4>Home</h4></a>";
 include 'dbConn.php';
 $conn = dbConn();
 
 function getGameByID() {
   global $conn;
   $sql = "SELECT * FROM `games` a left join `recommendation` b ON a.gameID = b.gameID WHERE a.gameID = :gameID ";
+
   $namedParameters = array();
   $namedParameters[':gameID'] = $_GET['gameID'];
   $statement = $conn->prepare($sql);    
@@ -23,6 +24,7 @@ function getGameByID() {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>Pokemon Recommendations</title>
   <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
@@ -36,20 +38,20 @@ function getGameByID() {
     
   <?php 
     if (isset($_GET['addRecommendation'])) {
+
       $sql = "INSERT INTO recommendation ( gameID, name, date, comment) 
               VALUES ( :gameID, :name, :date, :comment)";
-              
       $namedParameters = array();
       $namedParameters[':gameID'] = $_GET['gameID'];
       $namedParameters[':name'] = $_GET['name'];
       $namedParameters[':date'] = $_GET['date'];
       $namedParameters[':comment'] = $_GET['comment'];
-    
+
       $statement = $conn->prepare($sql);
       $statement->execute($namedParameters);  
       echo "Recommendation added!<br />";
     }
-    
+      
   ?>
   
   <div>

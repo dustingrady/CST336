@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <a href='admin.php'><h2>Home</h2></a>
+  <a href='admin.php'><h4>Home</h4></a>
   <title>Add New Game</title>
   <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>

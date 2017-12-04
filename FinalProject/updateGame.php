@@ -35,7 +35,7 @@ if (isset($_GET['updateForm'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <a href='admin.php'><h2>Home</h2></a>
+  <a href='admin.php'><h4>Home</h4></a>
   <title>Update Game</title>
   <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
