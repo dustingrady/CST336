@@ -38,7 +38,7 @@ foreach ($records as $record) {
   echo "<td>" . $record['yearPublished'] . "</td>";
   echo "<td><form action=gameRecommendations.php>";
   echo "<input type='hidden' name='gameID' value='".$record['gameID'] . "'/>";
-  echo "<input type='submit' value='Recommend'/></form></td>";
+  echo "<input type='submit' value='Comment'/></form></td>";
   echo "</tr>";
 }
 
