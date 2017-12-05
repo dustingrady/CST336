@@ -2,8 +2,7 @@
 
 include 'Connect.php';
 $conn = dbConn();
-$sql = "SELECT * FROM `games` a left join `recommendation` b ON a.gameID = b.gameID WHERE a.gameID = :gameID ";
-
+$sql = "SELECT * FROM `games` a left join `comments` b ON a.gameID = b.gameID WHERE a.gameID = :gameID ";
 $namedParameters = array();
 $namedParameters[':gameID'] = $_GET['gameID'];
 $statement = $conn->prepare($sql);    
@@ -12,8 +11,8 @@ while($data = $statement->fetch()) {
   $record[] = $data;
 }
 
-if (isset($_GET['addRecommendation'])) {
-  $sql = "INSERT INTO recommendation ( gameID, time, date, comment) 
+if (isset($_GET['addComment'])) {
+  $sql = "INSERT INTO comments ( gameID, time, date, comment) 
           VALUES ( :gameID, :time, :date, :comment)";
         
   $namedParameters = array();
@@ -30,13 +29,13 @@ if (isset($_GET['addRecommendation'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Recommendations</title>
+  <title>Comments</title>
 </head>
 
 <body>
     <?php $game = getGameByID()?>
     <header>
-      <h1><?=$game['title']?> Recommendations</h1>
+      <h1><?=$game['title']?> Comments</h1>
     </header>
     
     <form action="" method="get">
@@ -44,8 +43,27 @@ if (isset($_GET['addRecommendation'])) {
       Date: <input type="date" name="date"><br />
       Comment: <textarea rows="4" cols="20" name="comment" /></textarea> <br />
       <input type="hidden" name="gameID" value="<?=$_GET['gameID']?>" />
-      <input type="submit" value="Add a recommendation" name="addRecommendation" />
+      <input type="submit" value="Add a comment" name="addComment" />
     </form>
+    
+    <?php 
+      if (isset($_GET['addComment'])) {
+      
+        $sql = "INSERT INTO comments ( gameID, time, date, comment) 
+                VALUES ( :gameID, :time, :date, :comment)";
+              
+        $namedParameters = array();
+        $namedParameters[':gameID'] = $_GET['gameID'];
+        $namedParameters[':time'] = $_GET['time'];
+        $namedParameters[':date'] = $_GET['date'];
+        $namedParameters[':comment'] = $_GET['comment'];
+    
+        $statement = $conn->prepare($sql);
+        $statement->execute($namedParameters);  
+        echo "Record has been added!";
+     }
+     
+    ?>
 
     <?php
     $none = false;

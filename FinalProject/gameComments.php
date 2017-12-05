@@ -5,7 +5,7 @@ $conn = dbConn();
 
 function getGameByID() {
   global $conn;
-  $sql = "SELECT * FROM `games` a left join `recommendation` b ON a.gameID = b.gameID WHERE a.gameID = :gameID ";
+  $sql = "SELECT * FROM `games` a left join `comments` b ON a.gameID = b.gameID WHERE a.gameID = :gameID ";
 
   $namedParameters = array();
   $namedParameters[':gameID'] = $_GET['gameID'];
@@ -24,34 +24,33 @@ function getGameByID() {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <title>Pokemon Recommendations</title>
+  <title>Pokemon Game Reviews</title>
   <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body><center>
   <?php $game = getGameByID()?>
   <header>
-    <h1><?=$game['title']?> Pokemon Game Recommendations</h1>
+    <h1><?=$game['title']?> Pokemon Game Reviews</h1>
     <br />
   </header>
     
   <?php 
-    if (isset($_GET['addRecommendation'])) {
-
-      $sql = "INSERT INTO recommendation ( gameID, name, date, comment) 
+    if (isset($_GET['addComment'])) {
+      $sql = "INSERT INTO comments ( gameID, name, date, comment) 
               VALUES ( :gameID, :name, :date, :comment)";
+              
       $namedParameters = array();
       $namedParameters[':gameID'] = $_GET['gameID'];
       $namedParameters[':name'] = $_GET['name'];
       $namedParameters[':date'] = $_GET['date'];
       $namedParameters[':comment'] = $_GET['comment'];
-
+    
       $statement = $conn->prepare($sql);
       $statement->execute($namedParameters);  
-      echo "Recommendation added!<br />";
+      echo "Comment added!<br />";
     }
-      
+    
   ?>
   
   <div>
@@ -71,7 +70,7 @@ function getGameByID() {
     }
   
     if(!$exists){
-      echo "<tr><td colspan='3'>No recommendations for this game.</td></tr>";
+      echo "<tr><td colspan='3'>No comments for this game.</td></tr>";
     }
     echo "</table>";
     ?>
@@ -84,7 +83,7 @@ function getGameByID() {
       Comment: <textarea rows="4" cols="20" name="comment" /></textarea> <br />
       <input type="hidden" name="gameID" value="<?=$_GET['gameID']?>" />
       <br />
-      <input type="submit" value="Add Recommendation" name="addRecommendation" />
+      <input type="submit" value="Add Comment" name="addComment" />
     </form>
     </div>
   </div>

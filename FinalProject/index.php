@@ -13,7 +13,7 @@ function displayAllProducts() {
     echo "<th>Title</th>";		
     echo "<th>Platform</th>";		
     echo "<th>Year Published</th>";		
-    echo "<th>Recommendations</th>";
+    echo "<th>Comments</th>";
     
         foreach ($records as $record) {
             echo "<tr>"; 
@@ -21,7 +21,7 @@ function displayAllProducts() {
             echo "<td>" . $record['title'] . "</td>";
             echo "<td>" . $record['platform'] . "</td>";
             echo "<td>" . $record['yearPublished'] . "</td>";
-            echo "<td><form action=gameRecommendations.php>";
+            echo "<td><form action=gameComments.php>";
             echo "<input type='hidden' name='gameID' value='".$record['gameID'] . "'/>";
             echo "<input type='submit' value='Comment'/></form></td>";
             echo "</tr>";
@@ -35,7 +35,7 @@ function displayAllProducts() {
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Pokemon Game Recommender</title>
+  <title>Pokemon Game Catalog</title>
   <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>

@@ -28,7 +28,7 @@ echo "<th>Image</th>";
 echo "<th>Title</th>";		
 echo "<th>Platform</th>";		
 echo "<th>Year Published</th>";		
-echo "<th>Recommendations</th>";
+echo "<th>Comments</th>";
 
 foreach ($records as $record) {
   echo "<tr>"; 
@@ -36,7 +36,7 @@ foreach ($records as $record) {
   echo "<td>" . $record['title'] . "</td>"; 
   echo "<td>" . $record['platform'] . "</td>";
   echo "<td>" . $record['yearPublished'] . "</td>";
-  echo "<td><form action=gameRecommendations.php>";
+  echo "<td><form action=gameComments.php>";
   echo "<input type='hidden' name='gameID' value='".$record['gameID'] . "'/>";
   echo "<input type='submit' value='Comment'/></form></td>";
   echo "</tr>";
