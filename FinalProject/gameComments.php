@@ -62,9 +62,9 @@ function getGameByID() {
     foreach ($game as $games) {
       $exists = true;
       echo "<tr>"; 
-      echo "<td>" . $games['name'] . "</td>";
-      echo "<td>" . $games['date'] . "</td>";
-      echo "<td>" . $games['comment'] . "</td>";
+      echo "<td>  " . $games['name'] . "  </td>";
+      echo "<td>  " . $games['date'] . "  </td>";
+      echo "<td>  " . $games['comment'] . " </td>";
       echo "</tr>";
     }
   
@@ -77,9 +77,12 @@ function getGameByID() {
     </center>
     <br /><br />
     <form>
-      Trainer: <input type="text" name="name"><br />
-      Date: <input type="date" name="date"><br />
-      Comment: <textarea rows="4" cols="20" name="comment" /></textarea> <br />
+      Trainer: <br />
+      <input type="text" name="name"><br />
+      Date: <br />
+      <input type="date" name="date"><br />
+      Comment: <br />
+      <textarea rows="3" cols="20" name="comment" /></textarea> <br />
       <input type="hidden" name="gameID" value="<?=$_GET['gameID']?>" />
       <br />
       <input type="submit" value="Add Comment" name="addComment" />
