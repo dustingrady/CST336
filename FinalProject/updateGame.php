@@ -3,7 +3,7 @@
 include 'dbConn.php';
 $conn = dbConn();
  
-function getmangabyID() {
+function getGameByID() {
   global $conn;
   $sql = "SELECT * FROM games WHERE gameID = :gameID ";
   $namedParameters = array();
@@ -53,8 +53,8 @@ if (isset($_GET['updateForm'])) {
   <form><center>
     Image: <input type="text" name="image" value="<?=$game['image']?>" /> <br />
     Title: <input type="text" name="title" value="<?=$game['title']?>" /> <br />
-    Platform: <textarea rows="4" cols="20" name="genre" value="<?=$game['genre']?>" /></textarea> <br />
-    Year Published: <input type="text" name="author" value="<?= ($game['author'])?>"><br />
+    Platform: <input rows="4" cols="20" name="platform" value="<?=$game['platform']?>" /></input><br />
+    Year Published: <input type="text" name="yearPublished" value="<?= ($game['yearPublished'])?>"><br />
                 <br />
                 <input type="hidden" name="gameID" value="<?=$game['gameID']?>" />
                 <br />

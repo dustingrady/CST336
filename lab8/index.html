@@ -58,6 +58,34 @@
             });
         }
         
+        function validatePassword() {
+            $.ajax({
+                type: "get",
+                url: "api.php",
+                dataType: "json",
+                data: {
+                    'password': $('#password').val(),
+                    'action': 'validate-password'
+                },
+                success: function(data,status) {
+                    //debugger;
+                    
+                    if (data.length < 7) {
+                        $('#password-valid').html("Password must be 7 or more characters");
+                        $('#password-valid').css('color', 'red');
+                        
+                    } else {
+                        $('#password-valid').html("Password is valid");
+                        $('#password-valid').css('color', 'blue');
+
+                    }
+                  },
+                complete: function(data,status) { //optional, used for debugging purposes
+                     //alert(status);
+                }
+            });
+        }
+        
         function validateUsername() {
             $.ajax({
                 type: "get",
@@ -113,7 +141,7 @@
             Select a County: <select id="county-list"></select><br>
             
             Desired Username: <input onchange="validateUsername();" id='username' type="text"> <span id="username-valid"></span></span><br>
-            Password: <input type="password"><br>
+            Password: <input onchange="validatePassword();" id='password' type="text"> <span id="password-valid"></span></span><br>
             Type Password Again: <input type="password"><br>
             <input type="submit" value="Sign up!">
         </fieldset>

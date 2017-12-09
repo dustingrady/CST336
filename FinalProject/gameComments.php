@@ -17,13 +17,13 @@ function getGameByID() {
   }
   echo $data; //TESTING
   return $record;
- }
-
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">     
   <title>Pokemon Game Reviews</title>
   <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
@@ -50,14 +50,13 @@ function getGameByID() {
       $statement->execute($namedParameters);  
       echo "Comment added!<br />";
     }
-    
   ?>
   
   <div>
     <?php
     $exists = false;
     echo "<table border=1>";
-    echo "<th>Reader</th>";		
+    echo "<th>Trainer</th>";		
     echo "<th>Date</th>";
     echo "<th>Comment</th>";
     foreach ($game as $games) {
@@ -74,11 +73,11 @@ function getGameByID() {
     }
     echo "</table>";
     ?>
-    
+
     </center>
     <br /><br />
     <form>
-      Reader: <input type="text" name="name"><br />
+      Trainer: <input type="text" name="name"><br />
       Date: <input type="date" name="date"><br />
       Comment: <textarea rows="4" cols="20" name="comment" /></textarea> <br />
       <input type="hidden" name="gameID" value="<?=$_GET['gameID']?>" />

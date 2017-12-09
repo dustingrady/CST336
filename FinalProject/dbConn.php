@@ -9,7 +9,6 @@ function dbConn(){
     // Create connection
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     return $conn;
-    
  }
 
 function getDataBySQL($sql) {

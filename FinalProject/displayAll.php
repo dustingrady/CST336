@@ -4,6 +4,7 @@ include "dbConn.php";
 $connection = dbConn(); 
 $sql = "SELECT * FROM games WHERE 1 = 1";
 
+//Filter games
 if(!empty($_GET) && isset($_GET) && empty($_GET['gameID'])) {
     if(strcmp($_GET['title'], "")!==0)
     {

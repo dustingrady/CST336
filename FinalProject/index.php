@@ -52,8 +52,8 @@ function displayAllProducts() {
     <div>
     <table border=1>
         <tr>
-        <th>Title</th>
-        <th>Platform</th>
+            <th>Title</th>
+            <th>Platform</th>
         </tr>  
         <tr>
         <td>
@@ -61,17 +61,17 @@ function displayAllProducts() {
         </td>
         <td>
         <select name="platform" id="platform">
-                  <option selected disabled hidden value=""></option>
-                  <option value=""></option>
-                  <option value="Game Boy">Game Boy</option>
-                  <option value="Game Boy Color">Game Boy Color</option>
-                  <option value="Game Boy Advance">Game Boy Advance</option>
-                  <option value="Nintendo DS">Nintendo DS</option>
-                  <option value="Nintendo 3DS">Nintendo 3DS</option>
+            <option selected disabled hidden value=""></option>
+            <option value=""></option>
+            <option value="Game Boy">Game Boy</option>
+            <option value="Game Boy Color">Game Boy Color</option>
+            <option value="Game Boy Advance">Game Boy Advance</option>
+            <option value="Nintendo DS">Nintendo DS</option>
+            <option value="Nintendo 3DS">Nintendo 3DS</option>
         </select>
         </td>
 
-        <td><div><button id="displayAll">Search</button></div></td>
+        <td><div><button id="Search">Search</button></div></td>
         <td><div><button id="reset">Reset</button></div></td>
         
         </tr>
@@ -81,15 +81,15 @@ function displayAllProducts() {
      </div>
      <div id="all"><?=displayAllProducts()?></div></center>
      
+    <!-- Update search results using Ajax -->
     <script>
     /*global $*/
-         $("#displayAll").click(function() {
+         $("#Search").click(function() {
             $.ajax({
                 "method": "GET",
                 "url": "displayAll.php",
                 "data": {
                     "platform": $("#platform").val(),
-                    "difficulty": $("#difficulty").val(),
                     "title": $("#title").val(),
                 },
                 "success": function(data, status)
@@ -105,7 +105,6 @@ function displayAllProducts() {
                 "url": "displayAll.php",
                 "data": {
                     "platform": null,
-                    "difficulty": null,
                     "title": null,
                 },
                 "success": function(data, status)
