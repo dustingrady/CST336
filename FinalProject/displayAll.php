@@ -2,25 +2,30 @@
 
 include "dbConn.php";
 $connection = dbConn(); 
-$sql = "SELECT * FROM games WHERE 1 = 1";
+$sql = "SELECT * FROM games WHERE 1 = 1"; //Select all from games
 
 //Filter games
 if(!empty($_GET) && isset($_GET) && empty($_GET['gameID'])) {
-    if(strcmp($_GET['title'], "")!==0)
-    {
+    if(strcmp($_GET['title'], "")!==0){
         $sql .= " AND title LIKE '%" . $_GET['title'] . "%'";
     }
     
-    if(strcmp($_GET['platform'], "")!==0)
-    {
+    if(strcmp($_GET['platform'], "")!==0){
         $sql .= " AND platform LIKE '%" . $_GET['platform'] . "%'";
     }
-    
-    if(strcmp($_GET['yearPublished'], "")!==0)
-    {
-        $sql .= " AND difficulty LIKE '%" . $_GET['yearPublished'] . "%'";
-    }
+
+    if ($_GET['priceorder'] == 'ascending'){
+        $sql .= " ORDER BY title ASC";
+    } 
+    if ($_GET['priceorder'] == 'descending'){
+        $sql .= " ORDER BY title DESC";
+    } 
 }
+
+// if(isset($_GET['priceorder']) && !empty($_GET['priceorder'])){
+//     if ($_GET['priceorder'] == 'priceorderasc') $sql .= " ORDER BY buynow ASC";
+//     if ($_GET['priceorder'] == 'priceorderdesc') $sql .= " ORDER BY buynow DESC";
+// }
 
 $records = getDataBySQL($sql);
 
@@ -42,7 +47,6 @@ foreach ($records as $record) {
   echo "<input type='submit' value='Comment'/></form></td>";
   echo "</tr>";
 }
-
 echo "</table>";
 
 ?>

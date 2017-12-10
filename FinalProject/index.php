@@ -73,12 +73,20 @@ function displayAllProducts() {
 
         <td><div><button id="Search">Search</button></div></td>
         <td><div><button id="reset">Reset</button></div></td>
-        
         </tr>
+                
         </table>
         <br /> <br />
         
      </div>
+   <tr>
+        <td width="72" height="24"><p>Name A-Z</p></td>
+        <td width="28"><input name="priceorder" id="sortAscending" type="radio" value="ascending" /></td>
+
+        <td width="75" height="24"><p>Name Z-A</p></td>
+        <td width="20"><input name="priceorder" id="sortDescending" type="radio" value="descending" /></td>
+    </tr>
+    
      <div id="all"><?=displayAllProducts()?></div></center>
      
     <!-- Update search results using Ajax -->
@@ -114,6 +122,39 @@ function displayAllProducts() {
                 }
             });
         });
+        //TESTING vvvvvvv
+         $("#sortDescending").click(function() {
+            $.ajax({
+                "method": "GET",
+                "url": "displayAll.php",
+                "data": {
+                    "priceorder": $("#sortDescending").val(),
+                    "title": null,
+                },
+                "success": function(data, status)
+                {
+                    $("#all").html(data);
+                    $("#all").slideDown(0);
+                }
+            });
+        });
+        //TESTING vvvvvvv
+         $("#sortAscending").click(function() {
+            $.ajax({
+                "method": "GET",
+                "url": "displayAll.php",
+                "data": {
+                    "priceorder": $("#sortAscending").val(),
+                    "title": null,
+                },
+                "success": function(data, status)
+                {
+                    $("#all").html(data);
+                    $("#all").slideDown(0);
+                }
+            });
+        });
+        //TESTING ^^^^^^^^^
     </script>
     
     <br /><br />
