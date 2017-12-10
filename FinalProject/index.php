@@ -129,7 +129,8 @@ function displayAllProducts() {
                 "url": "displayAll.php",
                 "data": {
                     "priceorder": $("#sortDescending").val(),
-                    "title": null,
+                    "platform": $("#platform").val(),
+                    "title": $("#title").val(),
                 },
                 "success": function(data, status)
                 {
@@ -145,7 +146,8 @@ function displayAllProducts() {
                 "url": "displayAll.php",
                 "data": {
                     "priceorder": $("#sortAscending").val(),
-                    "title": null,
+                    "platform": $("#platform").val(),
+                    "title": $("#title").val(),
                 },
                 "success": function(data, status)
                 {
